@@ -6,27 +6,44 @@
 //
 
 import XCTest
+import SwiftUI
+import ViewInspector
+
+@testable import TechChallenge
 
 class TechChallengeTests: XCTestCase {
-
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
     }
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testTransactionFilteringByCategory(){
+        let transactionData = TransactionData()
+        var subject = TransactionListView()
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        let exp = subject.on(\.didAppear) { view in
+            do{
+                try view.actualView().selectedCategory = .food
+                let sum = try view.find(viewWithTag: "sum").text().string()
+                
+                let foodTransactions = transactionData.transactions.filter { ($0.category == .food) && $0.isPinned }
+                let sumOnFood = foodTransactions.reduce(0) { $0 + $1.amount }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+                XCTAssertEqual(sum, "$\(sumOnFood.formatted())")
+            }catch {
+                XCTFail("Fail: \(error)")
+            }
         }
+        ViewHosting.host(view: subject.environmentObject(transactionData))
+        wait(for: [exp], timeout: 0.1)
+        
     }
 
 }
+
+extension TransactionListView: Inspectable {}

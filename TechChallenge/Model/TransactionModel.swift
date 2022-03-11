@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 // MARK: - TransactionModel
 
-struct TransactionModel {
+struct TransactionModel : Equatable {
     enum Category: String, CaseIterable {
+        case all
         case food
         case health
         case entertainment
@@ -40,6 +42,7 @@ struct TransactionModel {
     let date: Date
     let accountName: String
     let provider: Provider?
+    var isPinned: Bool = true
 }
 
 extension TransactionModel: Identifiable {}

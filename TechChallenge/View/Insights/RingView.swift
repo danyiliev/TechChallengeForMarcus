@@ -11,23 +11,36 @@ fileprivate typealias Category = TransactionModel.Category
 
 struct RingView: View {
     let transactions: [TransactionModel]
+    let categories = Category.allCases.filter{ $0 != .all }
     
     private func ratio(for categoryIndex: Int) -> Double {
         // TODO: calculate ratio for each category according to cummulative expense
         
         // Returning sample value
-        0.2
+        let total = transactions.reduce(0) { $0 + $1.amount }
+        let filteredTransactions = transactions.filter { $0.category == categories[categoryIndex] }
+        let sum = filteredTransactions.reduce(0) { $0 + $1.amount }
+        return sum / total
     }
     
     private func offset(for categoryIndex: Int) -> Double {
         // TODO: calculate offset for each category according to cummulative expense
         
         // Returning sample value
-        Double(categoryIndex) * 0.2
+
+        var offset = 0.0
+        
+        if (categoryIndex > 0){
+            for idx in 0...categoryIndex-1 {
+                offset += ratio(for: idx)
+            }
+        }
+        
+        return offset
     }
 
     private func gradient(for categoryIndex: Int) -> AngularGradient {
-        let color = Category[categoryIndex]?.color ?? .black
+        let color = categories[categoryIndex].color
         return AngularGradient(
             gradient: Gradient(colors: [color.unsaturated, color]),
             center: .center,
@@ -48,7 +61,7 @@ struct RingView: View {
     
     var body: some View {
         ZStack {
-            ForEach(Category.allCases.indices) { categoryIndex in
+            ForEach(categories.indices) { categoryIndex in
                 PartialCircleShape(
                     offset: offset(for: categoryIndex),
                     ratio: ratio(for: categoryIndex)

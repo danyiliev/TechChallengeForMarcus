@@ -8,28 +8,38 @@
 import SwiftUI
 
 struct InsightsView: View {
-    let transactions: [TransactionModel] = ModelData.sampleTransactions
+    @EnvironmentObject var transactionData: TransactionData
     
     var body: some View {
         List {
-            RingView(transactions: transactions)
+            RingView(transactions: transactionData.transactions.filter{ $0.isPinned })
                 .scaledToFit()
-            
-            ForEach(TransactionModel.Category.allCases) { category in
+                .listRowInsets(EdgeInsets())
+            ForEach(TransactionModel.Category.allCases.filter {$0 != .all}) { category in
                 HStack {
                     Text(category.rawValue)
                         .font(.headline)
                         .foregroundColor(category.color)
                     Spacer()
                     // TODO: calculate cummulative expense for each category
-                    Text("$0.0")
+                    Text("$\(getSum(category:category).formatted())")
                         .bold()
                         .secondary()
-                }
+                }.listRowInsets(EdgeInsets())
             }
-        }
-        .navigationBarTitleDisplayMode(.inline)
+        }.onAppear {
+            UITableView.appearance().backgroundColor = .clear
+        }.navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Insights")
+    }
+
+}
+
+extension InsightsView {
+    func getSum(category: TransactionModel.Category) -> Double {
+        let filteredTransactions = transactionData.transactions.filter { $0.category == category && $0.isPinned }
+        let sum = filteredTransactions.reduce(0) { $0 + $1.amount }
+        return sum
     }
 }
 

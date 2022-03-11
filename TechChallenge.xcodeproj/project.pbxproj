@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,10 @@
 		3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226BE26B05EB100B3D085 /* ViewModifiers.swift */; };
 		3CE226C126B062BA00B3D085 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C026B062BA00B3D085 /* Double.swift */; };
 		3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C626B2E41E00B3D085 /* InsightsView.swift */; };
+		B73D7AC727DD0DEE0004123B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D7AC627DD0DEE0004123B /* CategoryView.swift */; };
+		B73D7ACB27DD1DB30004123B /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D7ACA27DD1DB30004123B /* CategoryListView.swift */; };
+		B73D7ACD27DD48D80004123B /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D7ACC27DD48D80004123B /* TransactionData.swift */; };
+		B73D7AD327DD640A0004123B /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = B73D7AD227DD640A0004123B /* ViewInspector */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +64,9 @@
 		3CE226BE26B05EB100B3D085 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		3CE226C026B062BA00B3D085 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3CE226C626B2E41E00B3D085 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		B73D7AC627DD0DEE0004123B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		B73D7ACA27DD1DB30004123B /* CategoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		B73D7ACC27DD48D80004123B /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B73D7AD327DD640A0004123B /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +148,7 @@
 		3CE226C926B2E43000B3D085 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B73D7AC527DD0CA80004123B /* CategoryList */,
 				3CE2268326B007D200B3D085 /* TechChallengeApp.swift */,
 				3CE226CB26B2E44E00B3D085 /* Insights */,
 				3CE226C826B2E42800B3D085 /* TransactionList */,
@@ -155,6 +164,7 @@
 				3CE226B026B03DC600B3D085 /* ModelData.swift */,
 				3CE226AE26B03CBA00B3D085 /* TransactionModel.swift */,
 				3C3FCAAC26C57A7D0092AB11 /* TransactionModel+UI.swift */,
+				B73D7ACC27DD48D80004123B /* TransactionData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +198,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B73D7AC527DD0CA80004123B /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				B73D7AC627DD0DEE0004123B /* CategoryView.swift */,
+				B73D7ACA27DD1DB30004123B /* CategoryListView.swift */,
+			);
+			path = CategoryList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -205,6 +224,9 @@
 				3C296F1126B455F1006DF667 /* PBXTargetDependency */,
 			);
 			name = TechChallengeTests;
+			packageProductDependencies = (
+				B73D7AD227DD640A0004123B /* ViewInspector */,
+			);
 			productName = TechChallengeTests;
 			productReference = 3C296F0B26B455F1006DF667 /* TechChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -222,6 +244,8 @@
 			dependencies = (
 			);
 			name = TechChallenge;
+			packageProductDependencies = (
+			);
 			productName = TechChallenge;
 			productReference = 3CE2268026B007D200B3D085 /* TechChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -253,6 +277,9 @@
 				Base,
 			);
 			mainGroup = 3CE2267726B007D200B3D085;
+			packageReferences = (
+				B73D7AD127DD640A0004123B /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = 3CE2268126B007D200B3D085 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -302,6 +329,8 @@
 				3CE01C6426B2EBDE0091B7BA /* Color.swift in Sources */,
 				3CE226BB26B0573C00B3D085 /* Date.swift in Sources */,
 				3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */,
+				B73D7ACD27DD48D80004123B /* TransactionData.swift in Sources */,
+				B73D7ACB27DD1DB30004123B /* CategoryListView.swift in Sources */,
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
 				3C296ECF26B31193006DF667 /* Angle.swift in Sources */,
 				3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */,
@@ -310,6 +339,7 @@
 				3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */,
 				3C296ED126B404A5006DF667 /* Path.swift in Sources */,
 				3CE226B926B0548C00B3D085 /* TransactionView.swift in Sources */,
+				B73D7AC727DD0DEE0004123B /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +587,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B73D7AD127DD640A0004123B /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B73D7AD227DD640A0004123B /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B73D7AD127DD640A0004123B /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3CE2267826B007D200B3D085 /* Project object */;
 }
