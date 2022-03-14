@@ -25,8 +25,8 @@
 		3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226BE26B05EB100B3D085 /* ViewModifiers.swift */; };
 		3CE226C126B062BA00B3D085 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C026B062BA00B3D085 /* Double.swift */; };
 		3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE226C626B2E41E00B3D085 /* InsightsView.swift */; };
-		B73D7AC727DD0DEE0004123B /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D7AC627DD0DEE0004123B /* CategoryView.swift */; };
-		B73D7ACB27DD1DB30004123B /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D7ACA27DD1DB30004123B /* CategoryListView.swift */; };
+		59601FDB27DBFCE0007776AC /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59601FD927DBFCE0007776AC /* CategoryListView.swift */; };
+		59601FDC27DBFCE0007776AC /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59601FDA27DBFCE0007776AC /* CategoryView.swift */; };
 		B73D7ACD27DD48D80004123B /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D7ACC27DD48D80004123B /* TransactionData.swift */; };
 		B73D7AD327DD640A0004123B /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = B73D7AD227DD640A0004123B /* ViewInspector */; };
 /* End PBXBuildFile section */
@@ -64,8 +64,8 @@
 		3CE226BE26B05EB100B3D085 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
 		3CE226C026B062BA00B3D085 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3CE226C626B2E41E00B3D085 /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
-		B73D7AC627DD0DEE0004123B /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		B73D7ACA27DD1DB30004123B /* CategoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		59601FD927DBFCE0007776AC /* CategoryListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		59601FDA27DBFCE0007776AC /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		B73D7ACC27DD48D80004123B /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,8 +201,8 @@
 		B73D7AC527DD0CA80004123B /* CategoryList */ = {
 			isa = PBXGroup;
 			children = (
-				B73D7AC627DD0DEE0004123B /* CategoryView.swift */,
-				B73D7ACA27DD1DB30004123B /* CategoryListView.swift */,
+				59601FD927DBFCE0007776AC /* CategoryListView.swift */,
+				59601FDA27DBFCE0007776AC /* CategoryView.swift */,
 			);
 			path = CategoryList;
 			sourceTree = "<group>";
@@ -328,18 +328,18 @@
 				3CE226AF26B03CBA00B3D085 /* TransactionModel.swift in Sources */,
 				3CE01C6426B2EBDE0091B7BA /* Color.swift in Sources */,
 				3CE226BB26B0573C00B3D085 /* Date.swift in Sources */,
+				59601FDC27DBFCE0007776AC /* CategoryView.swift in Sources */,
 				3CE226C726B2E41E00B3D085 /* InsightsView.swift in Sources */,
 				B73D7ACD27DD48D80004123B /* TransactionData.swift in Sources */,
-				B73D7ACB27DD1DB30004123B /* CategoryListView.swift in Sources */,
 				3CE226BF26B05EB100B3D085 /* ViewModifiers.swift in Sources */,
 				3C296ECF26B31193006DF667 /* Angle.swift in Sources */,
 				3C3FCAAD26C57A7D0092AB11 /* TransactionModel+UI.swift in Sources */,
 				3CE226B526B0523C00B3D085 /* TransactionListView.swift in Sources */,
+				59601FDB27DBFCE0007776AC /* CategoryListView.swift in Sources */,
 				3CE226B126B03DC600B3D085 /* ModelData.swift in Sources */,
 				3CE2268426B007D200B3D085 /* TechChallengeApp.swift in Sources */,
 				3C296ED126B404A5006DF667 /* Path.swift in Sources */,
 				3CE226B926B0548C00B3D085 /* TransactionView.swift in Sources */,
-				B73D7AC727DD0DEE0004123B /* CategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
